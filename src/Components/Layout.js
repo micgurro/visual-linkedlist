@@ -1,67 +1,89 @@
 import React from "react";
+import "./LinkedList.css";
+import LinkedList from "./LinkedList"
 
-import TodoItems from "./TodoItems";
-import "./TodoList.css";
+const list = new LinkedList()
 
+console.log(list)
 
 export default class Layout extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        
-        this.state = {
-            items:[]
-        };
 
-        this.addItem = this.addItem.bind(this);
-        this.deleteItem = this.deleteItem.bind(this);
+        this.state = list
+
+        this.addToHead = this.addToHead.bind(this);
+        this.remove = this.remove.bind(this);
+        this.removeFromHead = this.removeFromHead.bind(this);
     }
 
-    addItem(e) {
-        if (this._inputElement.value !== ""){
-            var newItem={
-                text: this._inputElement.value,
-                key: Date.now()
-            };
+    addToHead(e) {
+        if (this._inputElement.value !== "") {
+            this.setState(list.addToHead(this._inputElement.value))
+        };
 
-        this.setState((prevState) => {
-                return{
-                    items:prevState.items.concat(newItem)
-                };
-            });
-        }
         this._inputElement.value = "";
+        console.log(list)
+        e.preventDefault()
+    }
 
-        console.log(this.state.items);
+    removeFromHead(e) {
+        list.removeFromHead()
+        this.setState(list)
 
+        e.preventDefault()
+        console.log(list)
+    };
+
+    remove(e) {
+        if (this._inputDelete.value !== "") {
+            list.remove(this._inputDelete.value)
+        };
+        this._inputDelete.value = "";
+
+        this.setState(list)
+
+        console.log(list)
         e.preventDefault();
     }
 
-    deleteItem(key) {
-        var filteredItems = this.state.items.filter(function(item){
-            return (item.key !== key)
-        });
-        this.setState({
-            items: filteredItems
-        });
-    }
+    render() {
+        let current = this.state.head;
 
-    render(){
-    
-        return(
-        <div className="todoListMain">
-           <div className="ui">
-           <h1>React To-Do List</h1>
-             <form onSubmit={this.addItem}>
-               <input ref={(a) => this._inputElement = a}
-                        placeholder="Enter Task">
-               </input>
-               <button type="submit">Add</button>
-              </form>
+        let items = [];
+
+        while (current !== "null") {
+            items.push(<li>{current.value}</li>);
+            current = current.next;
+        }
+        return (
+            <div className="linkedListMain">
+                <div className="ui">
+                    <h1>React Linked List</h1>
+                    <form onSubmit={this.addToHead}>
+                        <input ref={(a) => this._inputElement = a}
+                            placeholder="Add To Head">
+                        </input>
+                        <button type="submit">Add</button>
+                    </form>
+
+                    <form onSubmit={this.remove}>
+                        <input ref={(a) => this._inputDelete = a}
+                            placeholder="Delete Specific">
+                        </input>
+                        <button type="submit">Delete</button>
+                    </form>
+
+                    <button onClick={this.removeFromHead}>
+                        Remove From Head</button>
+                </div>
+
+                <div className="theList" >
+                    <ul>{items}</ul>
+                </div>
             </div>
-            <TodoItems entries={this.state.items}
-                        delete={this.deleteItem}/>
-        </div>
         );
     }
 
 }
+

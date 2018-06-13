@@ -3,13 +3,13 @@ import './App.css';
 import Layout from "./Components/Layout";
 
 class App extends Component {
-  
+
   render() {
-    
+
     return (
-      
-        <Layout />
-     
+
+      <Layout />
+
     );
   }
 }
