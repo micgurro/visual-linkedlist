@@ -4,7 +4,7 @@ A React App for visualizing a singly-linked list data structure.
 ## Installation
 Install packages
 ```bash
-npm install create-react-app
+npm install
 ```
 
 ## Usage
