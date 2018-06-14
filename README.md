@@ -20,18 +20,17 @@ npm start
 
 ### Bugs
 
-1. BUG: 'Delete Specifc' action unresponsive if the node is 3 nodes deep.
+1. BUG: 'Delete Specifc' action unresponsive if the node is 3 links deep.
 2. BUG: Pass keys to children. (Works without for the time being but warning still fires.)
 3. BUG: The visualizer header (#action) will stack on itself if the string is too long.
 4. BUG: The visual linked list will create empty space if there's too much variety in string length. (Grid auto-flow)
 5. BUG: Visualizer needs to stop at footer to prevent overflow.
 
 ### To Dos
-Split up components and pass props.
-
-1. FEATURE: Find Node - User inputs a value and the first matching node is highlighted. (Method in LinkedList.js)
-2. FEATURE: Head pointer.
-3. FEATURE: Nest visual nodes in a NEXT block to show direction of linked list.
-4. FEATURE: Fancy animations.
-5. FEATURE: Fancy styling.
-
+1. Split up components and pass props.
+2. FEATURE: Find Node - User inputs a value and the first matching node is highlighted. (Method in LinkedList.js)
+3. FEATURE: Head pointer.
+4. FEATURE: Nest visual nodes in a NEXT block to show direction of linked list.
+5. FEATURE: Fancy animations.
+6. FEATURE: Fancy styling.
+7. FEATURE: Histogram Component w/ Revert button.

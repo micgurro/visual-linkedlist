@@ -57,10 +57,6 @@ export default class LinkedList {
         let previousNode = this.head;
         let thisNode = previousNode.next;
 
-        if (thisNode.value !== val) {
-            return undefined;
-        }
-
         while (thisNode) {
             if (thisNode.value === val) {
                 break;
