@@ -20,11 +20,11 @@ npm start
 
 ### Bugs
 
-1. BUG: 'Delete Specifc' action unresponsive if the node is 3 links deep.
-2. BUG: Pass keys to children. (Works without for the time being but warning still fires.)
-3. BUG: The visualizer header (#action) will stack on itself if the string is too long.
-4. BUG: The visual linked list will create empty space if there's too much variety in string length. (Grid auto-flow)
-5. BUG: Visualizer needs to stop at footer to prevent overflow.
+
+1. BUG: Pass keys to children. (Works without for the time being but warning still fires.)
+2. BUG: The visualizer header (#action) will stack on itself if the string is too long.
+3. BUG: The visual linked list will create empty space if there's too much variety in string length. (Grid auto-flow)
+4. BUG: Visualizer needs to stop at footer to prevent overflow.
 
 ### To Dos
 1. Split up components and pass props.
