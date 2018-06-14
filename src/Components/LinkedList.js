@@ -4,8 +4,8 @@ export default class LinkedList {
     constructor(value) {
         this.head = "null";
         this.length = 0;
-
-        this.addToHead(value);
+        this.action = "User hasn't done anything!"
+       
     }
 
     addToHead(value) {
@@ -13,7 +13,7 @@ export default class LinkedList {
         newNode.next = this.head;
         this.head = newNode;
         this.length++;
-
+        this.action = "User adds " + value;
         return this;
     }
 
@@ -23,8 +23,10 @@ export default class LinkedList {
         }
 
         const value = this.head.value;
+        this.action = "User removes " + this.head.value;
         this.head = this.head.next;
         this.length--;
+        
 
         return value;
     }
@@ -74,7 +76,7 @@ export default class LinkedList {
 
         previousNode.next = thisNode.next;
         this.length--;
-
+        this.action = "User removes " + val;
         return this;
     }
 }

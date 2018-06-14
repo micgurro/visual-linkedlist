@@ -59,13 +59,13 @@ export default class Layout extends React.Component {
         let items = [];
 
         while (current !== "null") {
-            items.push(<li>{current.value}</li>);
+            items.push(<td>{current.value}</td>);
             current = current.next;
         }
         return (
             <div className="linkedListMain">
+                <h1>React Linked List</h1>
                 <div className="ui">
-                    <h1>React Linked List</h1>
                     <form onSubmit={this.addToHead}>
                         <input ref={(a) => this._inputElement = a}
                             placeholder="Add To Head">
@@ -85,7 +85,9 @@ export default class Layout extends React.Component {
                 </div>
 
                 <div className="theList" >
-                    <ul>{items}</ul>
+                    <table><tbody>
+                    <tr><th>{list.action}</th>{items}</tr>
+                    </tbody></table>
                 </div>
             </div>
         );
