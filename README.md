@@ -19,6 +19,7 @@ npm start
 3. Delete From Head - On click the head node is deleted.
 
 ###To Dos 
+-BUG: 'Delete Specifc' action unresponsive if the node is 3 nodes deep.
 -BUG: Pass keys to children. (Works without for the time being but warning still fires.)
 -BUG: The visualizer header (#action) will stack on itself if the string is too long.
 -BUG: The visual linked list will create empty space if there's too much variety in string length. (Grid auto-flow)
