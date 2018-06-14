@@ -19,18 +19,19 @@ npm start
 3. Delete From Head - On click the head node is deleted.
 
 ### Bugs
-BUG: 'Delete Specifc' action unresponsive if the node is 3 nodes deep.
-BUG: Pass keys to children. (Works without for the time being but warning still fires.)
-BUG: The visualizer header (#action) will stack on itself if the string is too long.
-BUG: The visual linked list will create empty space if there's too much variety in string length. (Grid auto-flow)
-BUG: Visualizer needs to stop at footer to prevent overflow.
+
+1. BUG: 'Delete Specifc' action unresponsive if the node is 3 nodes deep.
+2. BUG: Pass keys to children. (Works without for the time being but warning still fires.)
+3. BUG: The visualizer header (#action) will stack on itself if the string is too long.
+4. BUG: The visual linked list will create empty space if there's too much variety in string length. (Grid auto-flow)
+5. BUG: Visualizer needs to stop at footer to prevent overflow.
 
 ### To Dos
 Split up components and pass props.
 
-FEATURE: Find Node - User inputs a value and the first matching node is highlighted. (Method in LinkedList.js)
-FEATURE: Head pointer.
-FEATURE: Nest visual nodes in a NEXT block to show direction of linked list.
-FEATURE: Fancy animations.
-FEATURE: Fancy styling.
+1. FEATURE: Find Node - User inputs a value and the first matching node is highlighted. (Method in LinkedList.js)
+2. FEATURE: Head pointer.
+3. FEATURE: Nest visual nodes in a NEXT block to show direction of linked list.
+4. FEATURE: Fancy animations.
+5. FEATURE: Fancy styling.
 
