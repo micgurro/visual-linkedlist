@@ -14,6 +14,7 @@ export default class Layout extends React.Component {
         this.addToHead = this.addToHead.bind(this);
         this.remove = this.remove.bind(this);
         this.removeFromHead = this.removeFromHead.bind(this);
+        
     }
 
     componentDidMount(){
@@ -31,7 +32,7 @@ export default class Layout extends React.Component {
         this._inputElement.focus()
     }
 
-
+    
 
     removeFromHead(e) {
         list.removeFromHead()
@@ -63,24 +64,36 @@ export default class Layout extends React.Component {
             current = current.next;
         }
         return (
+            
             <div className="linkedListMain">
-                <h1>React Linked List</h1>
+            <div className="header">
+            <h1>React Linked List</h1>
+            </div>
                 <div className="ui">
                     <form onSubmit={this.addToHead}>
                         <input ref={(a) => this._inputElement = a}
-                            placeholder="Add To Head">
-                        </input>
+                        placeholder="Add To Head">
+                        </input> 
                         <button type="submit">Add</button>
+                    </form>
+
+                    <form onSubmit={this.find}>
+                        <input ref={(a) => this._inputFind = a}
+                        placeholder="Highlight Node">
+                        </input>
+                        <button type="submit">Find</button>
                     </form>
 
                     <form onSubmit={this.remove}>
                         <input ref={(a) => this._inputDelete = a}
-                            placeholder="Delete Specific">
+                        placeholder="Delete Specific">
                         </input>
                         <button type="submit">Delete</button>
                     </form>
 
-                    <button onClick={this.removeFromHead}>
+                    
+
+                    <button id = "removeHead" onClick={this.removeFromHead}>
                         Remove From Head</button>
                 </div>
 
@@ -89,6 +102,21 @@ export default class Layout extends React.Component {
                     <tr><th>{list.action}</th>{items}</tr>
                     </tbody></table>
                 </div>
+            
+            <div className="footer">
+                <footer>
+                Copyright 2018 <a href = "https://github.com/kbougy">Kyri Vanderpoel </a> 
+                & <a href = "https://gitbhub.com/micgurro"> Michael "Meeko" Guerrero</a>
+                <br />
+                Licensed under <a href = "https://opensource.org/licenses/MIT"> MIT </a>
+                <br />
+                Code by 
+                Meeko 
+                Concept by 
+                Kyri
+                Made with React!
+                </footer>
+            </div>
             </div>
         );
     }

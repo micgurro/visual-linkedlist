@@ -5,24 +5,27 @@ body{
     background-color: lightcoral;
     display: grid;
     grid-template-areas:
-    ". . head . ."
-    "ui . main main .";
+    " head head head head head "
+    " . ui main main . "
+    " footer footer footer footer footer";
     
   }
 
-.linkedListMain h1{
+.linkedListMain .header{
+    display: grid;
     grid-area: head;
     background-color: red;
-    justify-content: center;
+    align-items: center;
+    justify-items: center;
     
 }
 
 .linkedListMain .ui{
+    display: grid;
     background-color: lightseagreen;
     grid-area: ui;
-    justify-content: start;
     margin-left: 15px;
-    
+    max-width: 325px;
 }
 
 .linkedListMain .ui input{
@@ -30,7 +33,9 @@ body{
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 5px;
-    width: 165px;
+    width: 200px;
+    
+    
 }
 
 .linkedListMain .ui button {
@@ -42,6 +47,12 @@ body{
     color: #FFF;
     border: 2px solid #0066FF;
     border-radius: 5px;
+    justify-self: center;
+    align-self: center;
+}
+
+#removeHead{
+    margin-left: 0px;
 }
 
 .linkedListMain .ui button:hover{
@@ -76,4 +87,14 @@ body{
 
 table.theList{
     padding: 0;
+}
+
+.linkedListMain .footer{
+    display: grid;
+    grid-area: footer;
+    align-items: center;
+    justify-items: center;
+    padding: 15px;
+    font-size: 10px;
+    text-align: center;
 }

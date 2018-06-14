@@ -4,7 +4,7 @@ export default class LinkedList {
     constructor(value) {
         this.head = "null";
         this.length = 0;
-        this.action = "User hasn't done anything!"
+        this.action = "User hasn't done anything!";
        
     }
 
