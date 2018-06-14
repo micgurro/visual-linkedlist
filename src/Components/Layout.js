@@ -11,10 +11,13 @@ export default class Layout extends React.Component {
         super(props);
 
         this.state = list
-
         this.addToHead = this.addToHead.bind(this);
         this.remove = this.remove.bind(this);
         this.removeFromHead = this.removeFromHead.bind(this);
+    }
+
+    componentDidMount(){
+        this._inputElement.focus();
     }
 
     addToHead(e) {
@@ -25,12 +28,14 @@ export default class Layout extends React.Component {
         this._inputElement.value = "";
         console.log(list)
         e.preventDefault()
+        this._inputElement.focus()
     }
+
+
 
     removeFromHead(e) {
         list.removeFromHead()
         this.setState(list)
-
         e.preventDefault()
         console.log(list)
     };
@@ -39,12 +44,13 @@ export default class Layout extends React.Component {
         if (this._inputDelete.value !== "") {
             list.remove(this._inputDelete.value)
         };
+
         this._inputDelete.value = "";
-
         this.setState(list)
-
         console.log(list)
         e.preventDefault();
+        this._inputDelete.focus()
+        
     }
 
     render() {
