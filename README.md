@@ -18,7 +18,7 @@ npm start
 2. Delete Specific - User inputs a value that matches a node in the linked list. On submit the node is selected and removed from the list.
 3. Delete From Head - On click the head node is deleted.
 
-###To Dos 
+### To Dos 
 -BUG: 'Delete Specifc' action unresponsive if the node is 3 nodes deep.
 -BUG: Pass keys to children. (Works without for the time being but warning still fires.)
 -BUG: The visualizer header (#action) will stack on itself if the string is too long.
