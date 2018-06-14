@@ -60,22 +60,22 @@ export default class Layout extends React.Component {
         let items = [];
 
         while (current !== "null") {
-            items.push(<td>{current.value}</td>);
+            items.push(<li>{current.value}</li>);
             current = current.next;
         }
         return (
 
             <div className="linkedListMain">
                 <div className="header">
-                    <h1>Linked List Visualizer</h1>
+                    <h1>Data Structure Visualizer: Singly-Linked List</h1>
 
                 </div>
                 <div className="ui">
                     <form onSubmit={this.addToHead}>
-                        <input ref={(a) => this._inputElement = a}
-                            placeholder="Add To Head">
-                        </input>
-                        <button type="submit">Add</button>
+                        
+                        <button type="submit"><input ref={(a) => this._inputElement = a}
+                        placeholder="Add To Head">
+                    </input>+</button>
                     </form>
 
                     {/*<!---<form onSubmit={this.find}>
@@ -83,39 +83,36 @@ export default class Layout extends React.Component {
                             placeholder="Highlight Node">
                         </input>
                         <button type="submit">Find</button>
-        </form>--->*/}
+                    </form>--->*/}
 
                     <form onSubmit={this.remove}>
-                        <input ref={(a) => this._inputDelete = a}
-                            placeholder="Delete Specific">
-                        </input>
-                        <button type="submit">Delete</button>
+                        <button type="submit"> <input ref={(a) => this._inputDelete = a}
+                        placeholder="Delete Specific">
+                    </input> -</button>
                     </form>
 
 
 
                     <button id="removeHead" onClick={this.removeFromHead}>
-                        Remove From Head</button>
+                        Remove Head</button>
                 </div>
 
                 <div className="theList" >
-                    <table><tbody>
-                        <tr><th>{list.action}</th>{items}</tr>
-                    </tbody></table>
+                    
+                        <ul><h3 id="action">{list.action}</h3></ul>{items}
+                    
                 </div>
 
                 <div className="footer">
                     <footer>
-                        Copyright 2018 <a href="https://github.com/kbougy">Kyri Vanderpoel </a>
-                        & <a href="https://gitbhub.com/micgurro"> Michael "Meeko" Guerrero</a>
-                        <br />
-                        Licensed under <a href="https://opensource.org/licenses/MIT"> MIT </a>
-                        <br />
-                        Code by
-                        Meeko
-                        Concept by
-                        Kyri
+                        <a href="https://opensource.org/licenses/MIT">
+                        Licensed under MIT </a> Copyright &copy; 2018 < hr/>
+                        <a href="https://github.com/kbougy">
+                        Concept: Kyri Vanderpoel </a><br />
+                        <a href="https://gitbhub.com/micgurro">
+                        Code: Michael "Meeko" Guerrero</a><br />
                         Made with React!
+                        
                 </footer>
                 </div>
             </div>

@@ -12,7 +12,7 @@ a{
 a:hover{
     font-weight: bold;
     font-size: 14px;
-    transition: font-size .2s ease-out;
+    transition: font-size .4s ease-out;
 }
 
 .linkedListMain{
@@ -20,7 +20,7 @@ a:hover{
     display: grid;
     grid-template-areas:
     " head head head head head "
-    " . ui main main . "
+    " . ui main . . "
     " footer footer footer footer footer";
     
   }
@@ -29,8 +29,11 @@ a:hover{
     display: grid;
     grid-area: head;
     background-color: red;
-    align-items: center;
-    justify-items: center;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 2rem;
+
+    transition: font-size .2s ease-in;
     
 }
 
@@ -39,11 +42,14 @@ a:hover{
     background-color: lightseagreen;
     grid-area: ui;
     margin-left: 15px;
-    max-width: 325px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .linkedListMain .ui input{
     padding: 10px;
+    
+    margin-right: 12px;
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 5px;
@@ -53,67 +59,136 @@ a:hover{
 }
 
 .linkedListMain .ui button {
-    padding: 10px;
-    font-size: 16px;
+    align-self: center;
+    justify-self: center;
+
+    padding: 15px;
     margin: 10px;
     margin-right: 0px;
-    background-color: #0066FF;
-    color: #FFF;
-    border: 2px solid #0066FF;
+
     border-radius: 5px;
-    justify-self: center;
-    align-self: center;
+
+    background-color: #0066FF;
+    border: 2px solid #0066FF;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+
     transition: font-size .2s ease-in;
+    transition: width .3s ease-in;
+    transition: background-color .2s ease-in;
 }
 
 #removeHead{
     margin-left: 0px;
+    width: 200px;
+
+    transition: font-size .2s ease-out;
 }
 
 .linkedListMain .ui button:hover{
     background-color: orange;
-    border: 2px solid orange;
+    border: 2px solid lightgoldenrodyellow;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     transition: font-size .2s ease-out;
+    transition: background-color .2s ease-out;
 }
 
 .linkedListMain .theList{
     background-color: lightgoldenrodyellow;
     grid-area: main;
+
+    
 }
 
-.linkedListMain .theList th{
+
+
+#action{
+    display: inline;
     color: white;
     background-color: green;
     padding: 15px;
     border-radius: 5px;
+    width: auto;
+    
+    
 }
 
-.linkedListMain .theList td{
+.linkedListMain .theList li{
+    display: inline-block;
     color: #FFF;
     background-color: rgba(0, 0, 0, .5);
     padding: 15px;
-    width: 100px;
-    margin-left: 15px;
+    width: auto;
+    margin: 10px;
     border-radius: 5px;
     list-style: none;
 
-    transition: background-color .2s ease-out;
+    transition: width .2s ease-out;
+   
 }
 
-table.theList{
-    padding: 0;
-}
+
 
 .linkedListMain .footer{
     display: grid;
     grid-area: footer;
     align-items: center;
     justify-items: center;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    margin-top: 2rem;
+    padding: 15px;
+
     background-color: slategray;
     color: white;
-    padding: 15px;
+    
     font-size: 10px;
     text-align: center;
+
+}
+
+
+@media only screen and (max-width: 800px){
+    .linkedListMain .header{
+        font-size: 10px;
+
+        transition: font-size .2s ease-in;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    
+    
+
+    .linkedListMain .ui{
+        max-width: 150px;
+        transition: max-width .2s ease-in;
+    }
+
+    .linkedListMain .ui input{
+        width: 45px;
+        transition: width .2s ease-in;
+    }
+
+    .linkedListMain .ui button{
+        margin-right: 10px;
+        transition: width .3s ease-out;
+        transition: margin-right .2s ease-out;
+    }
+
+    #removeHead{
+        width: 75px;
+        font-size: 12px;
+    }
+
+    .linkedListMain .theList th{
+        display: none;
+        transition: display .2s ease-out;
+    }
+    
 }
